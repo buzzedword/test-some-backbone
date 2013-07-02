@@ -5,6 +5,7 @@ var PageView = Backbone.View.extend({
 	el: '.container',
 
 	// Cache the template function for a single item.
+	// Can I name _.template whatever I want? 
 	pageTemplate: _.template("An example template"),
 
 	events: {
