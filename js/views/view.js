@@ -5,35 +5,28 @@ var PageView = Backbone.View.extend({
 	el: '.container',
 
 	// Cache the template function for a single item.
-	pageTemplate: ( $('#page-template').html() ),
+	pageTemplate: _.template( $('#page-template').html() ),
 
+	// 
 	events: {
-		'click .button': 'edit'
+		'click .button': 'render'
 	},
 
 	// this will let me know the PageView has been initialized
     initialize: function() {
-      console.log()
+      console.log('The PageView has been initialized.');
     },
 
-    // *while reading found this is an optional function*
-    // Not really sure what is supposed to happen in the following function or if I need
-    // both a render function and edit function for this tutorial
-    //render: function() {
-    //	this.$el.html( this.pageTemplate( this.model.toJSON() ) );
-    //},
-
-	edit: function() {
-		// I think this is suppossed to be a function to get the initialized
-		// models i've built in the models/model.js file: homeModel & aboutModel
+	render: function() {
+		// function to render the PageView with the either the homeModel or aboutModel data
+		// probably should use the .toggle() jQuery function, but I'm not sure
+		// not sure if i can leverage the code commented out below or not.
+		// this.$el.html( this.pageTemplate( this.model.toJSON() ) );
 	}
-
-	// I'm not sure if I always need the other things that the todo app has in this file
-	// Do I always need render: ? // *Render is an optional funtion*
 
 });
 
 var firstPageView = new PageView();
 
-// I think this should log <button></button>
+// I don't know why this isn't initializing the PageView
 console.log(pageTemplate.el);
