@@ -4,6 +4,10 @@ var PageView = Backbone.View.extend({
 	// body element: tagName: 'body',
 	el: '.container',
 
+
+	// You need to specify a model to listen to.
+	model: homeModel,
+
 	// Cache the template function for a single item.
 	pageTemplate: _.template("An example template"),
 
@@ -12,7 +16,7 @@ var PageView = Backbone.View.extend({
 		'dblclick .container': 'edit'
 	},
 
-	// I think this will listen to a change on any pageModel 
+	// I think this will listen to a change on any pageModel
 	// I'm not sure bc in the todo example I'm using for reference it says this
 	// only works if there is a one to one relationship and I'm not sure
 	// if that is the case here.
@@ -37,7 +41,11 @@ var PageView = Backbone.View.extend({
 
 });
 
-var firstPageView = new PageView();
 
-// I think this should log <button></button>
-console.log(pageTemplate.el);
+// This should always be wrapped in a document.ready event.
+$(function(){
+	var firstPageView = new PageView();
+
+	// I think this should log <button></button>
+	console.log(firstPageView.el);
+});
