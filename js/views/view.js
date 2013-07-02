@@ -1,24 +1,19 @@
 var PageView = Backbone.View.extend({
 
-	// Not sure if it would make more sense to set this to the
-	// body element: tagName: 'body',
+	// this will grab the element that is already on the page with a class of .container
+	// you could also create an element with tagName: 'li',
 	el: '.container',
 
 	// Cache the template function for a single item.
-	// Can I name _.template whatever I want? 
-	pageTemplate: _.template("An example template"),
+	pageTemplate: ( $('#page-template').html() ),
 
 	events: {
-		'click .container': 'edit',
-		'dblclick .container': 'edit'
+		'click .button': 'edit'
 	},
 
-	// I think this will listen to a change on any pageModel 
-	// I'm not sure bc in the todo example I'm using for reference it says this
-	// only works if there is a one to one relationship and I'm not sure
-	// if that is the case here.
+	// this will let me know the PageView has been initialized
     initialize: function() {
-      this.listenTo(this.model, 'change', this.render);
+      console.log()
     },
 
     // *while reading found this is an optional function*
