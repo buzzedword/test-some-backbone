@@ -1,6 +1,5 @@
 test-some-backbone
 ==================
-Help a sister out?
 
 ## My Goal
 Use MV* and jQuery, Backbone, and Underscore to serve simple page views via a button that is clicked.  I am starting with two views (home and about) each containing a title and a button.  
