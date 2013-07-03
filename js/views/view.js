@@ -4,6 +4,10 @@ var PageView = Backbone.View.extend({
 	// you could also create an element with tagName: 'li',
 	el: '.container',
 
+
+	// You need to specify a model to listen to.
+	model: homeModel,
+
 	// Cache the template function for a single item.
 	pageTemplate: _.template( $('#page-template').html() ),
 
@@ -22,11 +26,20 @@ var PageView = Backbone.View.extend({
 		// probably should use the .toggle() jQuery function, but I'm not sure
 		// not sure if i can leverage the code commented out below or not.
 		// this.$el.html( this.pageTemplate( this.model.toJSON() ) );
+    //},
+
+	edit: function() {
+		// I think this is suppossed to be a function to get the initialized
+		// models i've built in the models/model.js file: homeModel & aboutModel
 	}
 
 });
 
-var firstPageView = new PageView();
 
-// I don't know why this isn't initializing the PageView
-console.log(pageTemplate.el);
+// This should always be wrapped in a document.ready event.
+$(function(){
+	var firstPageView = new PageView();
+
+	// I think this should log <button></button>
+	console.log(firstPageView.el);
+});
