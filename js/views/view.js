@@ -13,12 +13,13 @@ var PageView = Backbone.View.extend({
 
 	// 
 	events: {
-		'click .button': 'render'
+		'click button': 'render'
 	},
 
 	// this will let me know the PageView has been initialized
     initialize: function() {
       console.log('The PageView has been initialized.');
+      this.render();
     },
 
 	render: function() {
@@ -26,7 +27,7 @@ var PageView = Backbone.View.extend({
 		// probably should use the .toggle() jQuery function, but I'm not sure
 		// not sure if i can leverage the code commented out below or not.
 		// this.$el.html( this.pageTemplate( this.model.toJSON() ) );
-    //},
+    },
 
 	edit: function() {
 		// I think this is suppossed to be a function to get the initialized

@@ -7,7 +7,12 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone.js"></script>
-
+    <script type="text/template" id="page-template">
+        <div class="view">
+            <h1><%- title %></h1>
+            <button><%- buttontitle %></button>
+        </div>
+    </script>
     <script src="js/models/model.js"></script>
     <script src="js/views/view.js"></script>
 </head>
@@ -15,12 +20,7 @@
 
 <div class="container"></div>
 
-<script type="text/template" id="page-template">
-	<div class="view">
-		<h1><%- title %></h1>
-		<button><%- buttontitle %></button>
-	</div>
-</script>
+
 
 </body>
 </html>
